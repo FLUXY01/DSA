@@ -1,15 +1,17 @@
 package recursion;
 
 public class printNameNTypes {
+
     public static void main(String[] args) {
-        PrintNameNTypes(3);
+        PrintNameNTimes(5);
     }
 
-    public static void PrintNameNTypes(int n){
-        if (n == 0){
+    public static void PrintNameNTimes(int n){
+        if(n == 0){
             return;
         }
-        System.out.println("Vimanyu");
-        PrintNameNTypes(n - 1);
+        System.out.println("Ashish");
+        PrintNameNTimes(n-1);
     }
+
 }
