@@ -2,7 +2,7 @@ package Sorting;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        selectionSort(new int[]{29,23,5,69,21,1,6});
+        selectionSort(new int[]{100,75,65,55,34,775,21,1});
     }
     public static void selectionSort(int[]arr){
         int n = arr.length;
@@ -17,7 +17,7 @@ public class SelectionSort {
             arr[minIndex] = arr[i];
             arr[i] = temp;
         }
-        for (int num: arr){
+        for (int num : arr){
             System.out.println(num);
         }
     }
