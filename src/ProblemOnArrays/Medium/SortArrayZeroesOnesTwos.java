@@ -1,5 +1,5 @@
 package ProblemOnArrays.Medium;
-
+//Dutch National Flag Algorithm
 public class SortArrayZeroesOnesTwos {
     public static void main(String[] args) {
         int[] arr = {2,0,1};

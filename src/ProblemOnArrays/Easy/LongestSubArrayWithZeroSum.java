@@ -1,6 +1,6 @@
 package ProblemOnArrays.Easy;
 
-public class LongestSubArrayWithSum {
+public class LongestSubArrayWithZeroSum {
 
     public static void main(String[] args) {
         int [] arr = {6, -2, 2, -8, 1, 7, 4, -10};
