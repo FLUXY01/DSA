@@ -3,10 +3,17 @@ package ProblemOnArrays.Easy;
 public class FindLargestElement {
     public static void main(String[] args) {
         int[] arr = {2, 5, 1, 3, 0};
-        int low = 0;
-        int high = arr.length-1;
-        QuickSort(arr,low,high);
-        System.out.println(arr[high]);
+//        int low = 0;
+//        int high = arr.length-1;
+//        QuickSort(arr,low,high);
+//        System.out.println(arr[high]);
+        int largest = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]>largest){
+                largest = arr[i];
+            }
+        }
+        System.out.println(largest);
     }
     public static void QuickSort(int[]arr, int low, int high){
         if (low<high){

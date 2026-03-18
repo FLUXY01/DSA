@@ -1,24 +1,20 @@
 package ProblemOnArrays.Easy;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class FindDuplicateFromSortedArray {
     public static void main(String[] args) {
-        int [] arr = {0,1,1,1,2,3,3,3};
-       // System.out.println(findDuplicateFromSortedArray(arr));
-        System.out.println(optimized(arr));
+        int [] arr = {1,1,2};
+       findDuplicateFromSortedArray(arr);
+        //System.out.println(optimized(arr));
     }
-    public static int findDuplicateFromSortedArray(int[]arr){
-        int count = 0;
-        HashSet<Integer> seek = new HashSet<>();
-        for (int num: arr) {
-            if (!seek.contains(num)){
-                seek.add(num);
-                arr[count] = num;
-                count++;
-            }
+    public static void findDuplicateFromSortedArray(int[]arr){
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for (int num: arr){
+            map.put(num,map.getOrDefault(map.get(num),0)+1);
         }
-        return count;
+        System.out.println(map.size());
     }
     public static int optimized(int[]arr){
         int count = 0;
