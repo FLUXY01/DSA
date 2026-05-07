@@ -7,7 +7,7 @@ public class ReverseWordsInString {
     }
     public static String reverseWordsInString(String s){
         StringBuilder result = new StringBuilder();
-        int i  = s.length()-1;
+        int i  = s.length();
         while (i>=0){
             while (i >= 0 && s.charAt(i) == ' '){
                 i--;

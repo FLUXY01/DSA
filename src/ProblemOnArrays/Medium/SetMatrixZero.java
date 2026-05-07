@@ -3,9 +3,9 @@ package ProblemOnArrays.Medium;
 public class SetMatrixZero {
     public static void main(String[] args) {
         int[][] arr = {
-                {0,1,2,0},
-                {3,4,5,2},
-                {1,3,1,5}
+                {0,1,2},
+                {3,0,5},
+                {1,3,1}
         };
         matrixZero(arr);
         for (int i = 0; i < arr.length; i++) {

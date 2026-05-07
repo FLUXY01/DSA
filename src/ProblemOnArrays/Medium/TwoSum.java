@@ -7,7 +7,7 @@ public class TwoSum {
         int[] arr = {2,6,5,8,11};
         int n = arr.length;
         int target = 14;
-        int[] result = twoSum(arr, n, target);
+        int[] result = optimisedTwoSum(arr, target);
         for (int nums: result){
             System.out.println(nums);
         }
@@ -29,7 +29,7 @@ public class TwoSum {
     public static int[] optimisedTwoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        for(int i = 0; i < nums.length; i++){
+        for(int i = 0; i < nums.length; i++){ // 2 6 5 8 11
             int complement = target - nums[i];
 
             if(map.containsKey(complement)){

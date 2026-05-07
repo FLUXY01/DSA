@@ -29,6 +29,12 @@ public class RotateMatrix {
                 matrix[j][i] = temp;
             }
         }
+        /*
+        After Transpose
+        {1, 4, 7},
+        {2, 5, 8},
+        {3, 6, 9},
+         */
 
         // Step 2: Reverse each row
         for (int i = 0; i < n; i++) {

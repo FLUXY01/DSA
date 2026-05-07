@@ -1,25 +1,32 @@
 package ProblemOnArrays.Easy;
+import java.util.HashMap;
 
 public class LongestSubArrayWithZeroSum {
 
     public static void main(String[] args) {
-        int [] arr = {6, -2, 2, -8, 1, 7, 4, -10};
-        int n = 8;
-        System.out.println(longestSubArrayWithSum(arr,n));
+        int[] arr = {6, -2, 2, -8, 1, 7, 4, -10};
+        int n = arr.length;
+        System.out.println(longestSubArrayWithSum(arr, n));
     }
-    public static int longestSubArrayWithSum(int[]arr,int n){
-        int maxLength = 0;
-        for (int startIndex = 0; startIndex<n; startIndex++){
-            for (int endIndex = startIndex; endIndex<n; endIndex++){
-                int currentSum = 0;
-                for (int i = startIndex; i <= endIndex; i++) {
-                    currentSum += arr[i];
-                }
-                if(currentSum == 0){
-                    maxLength = Math.max(maxLength, endIndex - startIndex + 1);
-                }
+
+    public static int longestSubArrayWithSum(int[] arr, int n) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int sum = 0, maxLen = 0;
+
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+
+            if (sum == 0) {
+                maxLen = i + 1;
+            }
+
+            if (map.containsKey(sum)) {
+                maxLen = Math.max(maxLen, i - map.get(sum));
+            } else {
+                map.put(sum, i);
             }
         }
-        return maxLength;
+
+        return maxLen;
     }
 }

@@ -1,27 +1,36 @@
 package ProblemOnArrays.Medium;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class LongestConsecSeq {
     public static void main(String[] args) {
         int[] arr = {1,2,2,3};
-        longestConsecSeq(arr);
+        System.out.println(longestConsecSeq(arr));
     }
-    public static void longestConsecSeq(int[] arr){
-        Arrays.sort(arr);
-        int count = 1;
-        int max = 1;
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i+1] - arr[i] == 1){
-                count++;
-            }
-            else if(arr[i+1] == arr[i]){
-                continue;
-            }
-            else{
-                count = 1;
-            }
-            max = Math.max(max,count);
+    public static int longestConsecSeq(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+            set.add(num);
         }
-        System.out.println(max);
+
+        int longest = 0;
+
+        for (int num : set) {
+            // start of sequence
+            if (!set.contains(num - 1)) {
+                int current = num;
+                int count = 1;
+
+                while (set.contains(current + 1)) {
+                    current++;
+                    count++;
+                }
+
+                longest = Math.max(longest, count);
+            }
+        }
+
+        return longest;
     }
 }

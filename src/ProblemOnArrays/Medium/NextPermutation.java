@@ -20,14 +20,12 @@ public class NextPermutation {
                 break;
             }
         }
-
         // If no index found
         if (index == -1) {
             // Reverse the entire array
             reverse(nums, 0, nums.length - 1);
             return;
         }
-
         // Find just larger element
         for (int i = nums.length - 1; i > index; i--) {
             // Swap them
@@ -36,7 +34,6 @@ public class NextPermutation {
                 break;
             }
         }
-
         // Reverse part after index
         reverse(nums, index + 1, nums.length - 1);
     }

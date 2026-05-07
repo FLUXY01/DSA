@@ -6,7 +6,7 @@ public class RotateArrayByKElements {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         int k = 3;
-        //rotateRight(arr,k);
+        rotateRight(arr,k);
         rotateLeft(arr,k);
         for (int num : arr){
             System.out.println(num);
