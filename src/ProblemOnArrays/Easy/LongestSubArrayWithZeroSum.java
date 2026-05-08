@@ -12,7 +12,7 @@ public class LongestSubArrayWithZeroSum {
     public static int longestSubArrayWithSum(int[] arr, int n) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int sum = 0, maxLen = 0;
-
+//6,0 4,1 -2,3 -1,4 10,6
         for (int i = 0; i < n; i++) {
             sum += arr[i];
 
